@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello Mychaella</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      font-size: 40px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .numbers {
+      display: flex;
+      gap: 20px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+    .numbers span {
+      border: 2px solid black;
+      padding: 10px 20px;
+      border-radius: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .numbers span:hover {
+      background-color: black;
+      color: white;
+    }
+    .hidden-message {
+      margin-top: 20px;
+      font-size: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Hello, click mo ung mga numbers then may makikita ka jan HAHAHA</h1>
+
+<div class="numbers">
+  <span onclick="showMessage(1)">1</span>
+  <span onclick="showMessage(2)">2</span>
+  <span onclick="showMessage(3)">3</span>
+</div>
+
+<div class="hidden-message" id="message1">Wala to HAHAHAHA</div>
+<div class="hidden-message" id="message2">Wala rin to HAHAHAHAHA, sa last na</div>
+<div class="hidden-message" id="message3">Hi, i made this short message to confess my feelings for you idk how i feel right now, i've been thinking of this for a long time but ngayon lang ako nag karoon ng lakas ng loob, i like you, i really do, chat mo nalang ako HAHAHAHA.</div>
+
+<!-- Add an audio element for the sound -->
+<audio id="clickSound">
+  <source src="kungpipiliinHAHA.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  function showMessage(num) {
+    document.getElementById('message1').style.display = 'none';
+    document.getElementById('message2').style.display = 'none';
+    document.getElementById('message3').style.display = 'none';
+    
+    document.getElementById('message' + num).style.display = 'block';
+
+    // Play sound if number 3 is clicked
+    if (num === 3) {
+      const sound = document.getElementById('clickSound');
+      sound.play();
+    }
+  }
+</script>
+
+</body>
+</html>
